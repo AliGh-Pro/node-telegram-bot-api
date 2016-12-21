@@ -74,6 +74,8 @@ TelegramBot
     * [.stopPolling()](#TelegramBot+stopPolling) ⇒ <code>Promise</code>
     * [.getMe()](#TelegramBot+getMe) ⇒ <code>Promise</code>
     * [.setWebHook(url, [cert])](#TelegramBot+setWebHook)
+    * [.deleteWebHook()](#TelegramBot+deleteWebHook) ⇒ <code>Promise</code>
+    * [.getWebHookInfo()](#TelegramBot+getWebHookInfo) ⇒ <code>Promise</code>
     * [.getUpdates([timeout], [limit], [offset])](#TelegramBot+getUpdates) ⇒ <code>Promise</code>
     * [.sendMessage(chatId, text, [options])](#TelegramBot+sendMessage) ⇒ <code>Promise</code>
     * [.answerInlineQuery(inlineQueryId, results, [options])](#TelegramBot+answerInlineQuery) ⇒ <code>Promise</code>
@@ -157,6 +159,24 @@ Specify an url to receive incoming updates via an outgoing webHook.
 | url | <code>String</code> | URL where Telegram will make HTTP Post. Leave empty to delete webHook. |
 | [cert] | <code>String</code> &#124; <code>stream.Stream</code> | PEM certificate key (public). |
 
+<a name="TelegramBot+deleteWebHook"></a>
+
+### telegramBot.deleteWebHook() ⇒ <code>Promise</code>
+Use this method to remove webhook integration if you decide to
+switch back to getUpdates. Returns True on success.
+
+**Kind**: instance method of <code>[TelegramBot](#TelegramBot)</code>  
+**See**: https://core.telegram.org/bots/api#deletewebhook  
+<a name="TelegramBot+getWebHookInfo"></a>
+
+### telegramBot.getWebHookInfo() ⇒ <code>Promise</code>
+Use this method to get current webhook status.
+On success, returns a [WebhookInfo](https://core.telegram.org/bots/api#webhookinfo) object.
+If the bot is using getUpdates, will return an object with the
+url field empty.
+
+**Kind**: instance method of <code>[TelegramBot](#TelegramBot)</code>  
+**See**: https://core.telegram.org/bots/api#getwebhookinfo  
 <a name="TelegramBot+getUpdates"></a>
 
 ### telegramBot.getUpdates([timeout], [limit], [offset]) ⇒ <code>Promise</code>
